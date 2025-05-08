@@ -1,17 +1,127 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* Reset e Variáveis */
+:root {
+    --primary-color: #3498db;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --text-color: #333;
+}
+
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    box-sizing: border-box;
 }
-header {
-    background: #333;
-    color: #fff;
-    padding: 20px;
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f9f9f9;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav ul li a:hover {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+/* Posts */
+.posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.post {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+}
+
+.post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.post h2 {
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.post-meta {
+    padding: 0 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.post p {
+    padding: 0 1rem 1rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.read-more:hover {
+    background: #2980b9;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+    color: white;
     text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
 }
-article {
-    margin-bottom: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .posts {
+        grid-template-columns: 1fr;
+    }
 }
